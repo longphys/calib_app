@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/long/root/root-6.36.02-install/include -I/home/long/scripts/calib_project/calib/include
+CXX_INCLUDES = -I/home/long/root/root-source/pre-compiled/root/include -I/home/long/scripts/calib_app/calib/include
 
 CXX_FLAGS =  -g -g -std=gnu++17
 
