@@ -155,6 +155,7 @@ double fit_energy(int channel_1, int channel_2, TCanvas* c_fit, int i, const Con
 	c_fit->cd(1);
 	h_calibrate->Fit("f_linear", "Q");
 
+
 	double coef_a = f_linear->GetParameter(0);
 	double coef_b = f_linear->GetParameter(1);
 	double coef_a_error = f_linear->GetParError(0);
@@ -936,7 +937,8 @@ void DataAnalyser::Analyze(Config& config)
     iteration++;
   }
   
-  std::cout << "\nFirst Compton Edge = " << ch1 << "; Second Compton Edge = " << ch2 
+  std::cout << "\nFirst Compton Edge = " << ch1 
+  << "; Second Compton Edge = " << ch2 
   << "\nFirst Compton Edge Resolution = " << config.res_1 << "; Second Compton Edge Resolution = " << config.res_2 << "\n";
   
   std::cout << "\nEnergy calibration function: E = a*Ch + b\n";
@@ -976,4 +978,5 @@ void DataAnalyser::Analyze(Config& config)
 
   fileSave.close();
   std::cout << "\nOutput file is saved to: " << file_to_be_saved;
+
 }
